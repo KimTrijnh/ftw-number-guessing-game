@@ -3,7 +3,7 @@
 
 Created with love by: `Huong Trinh (Kim)`
   
-View online at: `Your URL here`
+View online at: `https://ftw-numberguessing-game.netlify.com/`
   
 A simple number guessing game builded for coderschool assignment
 
@@ -43,13 +43,13 @@ The following **additional** features are implemented:
 
 ## Time Spent and Lessons Learned
 
-Time spent: **X** hours spent in total.
+Time spent: **infinite** hours spent in total. 
 
 Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2019] [Huong]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
