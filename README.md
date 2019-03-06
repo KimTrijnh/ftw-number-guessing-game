@@ -3,7 +3,7 @@
 
 Created with love by: `Huong Trinh (Kim)`
   
-View online at: `https://ftw-numberguessing-game.netlify.com/`
+View online at: https://ftw-numberguessing-game.netlify.com/
   
 A simple number guessing game builded for coderschool assignment
 
