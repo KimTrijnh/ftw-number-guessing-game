@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Number Guessing Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="w-100 mt-5">
+
+            <div class="d-flex justify-content-around">
+                <div class="w-50 d-flex flex-column align-items-end">
+                    <h2>GUESS GAME</h2>
+                    
+                    <p>Guessing number from 1 to 100</p>
+                    <p class="lead">Press Start to play</p>
+                    <button id="start" class="btn btn-block w-50 btn-primary mt-5">Start or Reset</button>
+                    <input class="form-control w-75 my-3" type="text" name="inputGuess" id="guess">
+                    <button id="submit" class="btn btn-block w-25 btn-info" type="submit">Guess</button>
+
+                    <div id="recordBox" class="d-flex w-100 p-3 mt-4">
+                        <div id ="round" class="border border-info rounded" style="display: none">
+                            <span id="count"></span>
+                            <span id="time"></span>
+                    </div>
+                      
+                    </div>
+                </div>
+
+                <div class="devider border-right border-info mx-5"></div>
+
+                <div id="feedback" class="text-center w-50">
+                    <h3>Let's see what you got</h3>
+                    <div id="historyBox"></div>
+                    <div id="wrongBox" class="alert alert-danger" style="display:none"></div>
+                    <div id="rightBox" class="alert alert-success" style="display:none"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
