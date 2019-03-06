@@ -19,7 +19,7 @@ function startOrReset() {
     submitBtn.disabled = false;
     count = 0;
     remaining = 10;
-    history.innerHTML = '';
+    history.innerText = '';
     input.value = '';
     wrongAlert.style.display = "none";
     rightAlert.style.display = "none";
@@ -43,25 +43,25 @@ function compareAndFeedback() {
             feedback = `your guess should be a number from 1 to 100`;
             wrongAlert.style.display = "block";
             rightAlert.style.display = "none";
-            wrongAlert.innerHTML = feedback;
+            wrongAlert.innerText = feedback;
         }
         else if (guessNum > randomNum) {
             feedback = `OPP, TOO HIGH`;
             rightAlert.style.display = "none";
             wrongAlert.style.display = "block";
-            wrongAlert.innerHTML = feedback;
+            wrongAlert.innerText = feedback;
     
         } else if (guessNum < randomNum) {
             feedback = `OPP, TOO LOW`;
             rightAlert.style.display = "none";
             wrongAlert.style.display = "block";
-            wrongAlert.innerHTML = feedback;
+            wrongAlert.innerText = feedback;
     
         } else if (guessNum == randomNum) {
             feedback = `WOW, YOU TAKE TOO LONG TO MAKE IT LOL`;
             wrongAlert.style.display = "none";
             rightAlert.style.display = "block";
-            rightAlert.innerHTML = feedback;
+            rightAlert.innerText = feedback;
             submitBtn.disabled = true;
         }
         
@@ -73,14 +73,14 @@ function compareAndFeedback() {
             feedback = `WOW, YOU TAKE TOO LONG TO MAKE IT LOL`;
             wrongAlert.style.display = "none";
             rightAlert.style.display = "block";
-            rightAlert.innerHTML = feedback;
+            rightAlert.innerText = feedback;
         } else {
             feedback = `GAME OVER!! 
                 Human, we are laughing at your face
                 Press Start to play again`;
             wrongAlert.style.display = "block";
             rightAlert.style.display = "none";
-            wrongAlert.innerHTML = feedback;
+            wrongAlert.innerText = feedback;
             }
     }
     
