@@ -13,6 +13,11 @@ let guessArray = [];
 submitBtn.disabled = true;
 
 
+//for checking if an number is repeated
+function loopArray(arr, a) {
+    return arr.findIndex((x) => x == a)
+}
+
 
 function startOrReset() {
     //reset All
@@ -33,65 +38,72 @@ function compareAndFeedback() {
     let guessNum;
     let feedback;
     guessNum = input.value;
-    guessArray.push(guessNum);
-    count++;
-    remaining--;
-   
-    
-    if(count < 10) {
-        if (isNaN(guessNum) || guessNum <= 0 || guessNum === '') {
-            feedback = `your guess should be a number from 1 to 100`;
-            wrongAlert.style.display = "block";
-            rightAlert.style.display = "none";
-            wrongAlert.innerText = feedback;
-        }
-        else if (guessNum > randomNum) {
-            feedback = `OPP, TOO HIGH`;
-            rightAlert.style.display = "none";
-            wrongAlert.style.display = "block";
-            wrongAlert.innerText = feedback;
-    
-        } else if (guessNum < randomNum) {
-            feedback = `OPP, TOO LOW`;
-            rightAlert.style.display = "none";
-            wrongAlert.style.display = "block";
-            wrongAlert.innerText = feedback;
-    
-        } else if (guessNum == randomNum) {
-            feedback = `WOW, YOU TAKE TOO LONG TO MAKE IT LOL`;
-            wrongAlert.style.display = "none";
-            rightAlert.style.display = "block";
-            rightAlert.innerText = feedback;
-            submitBtn.disabled = true;
-        }
-        
-    } else if (count == 10) {
-        //disable guess button to stop human from playing
-        submitBtn.disabled = true;
-    
-        if (guessNum == randomNum) {
-            feedback = `WOW, YOU TAKE TOO LONG TO MAKE IT LOL`;
-            wrongAlert.style.display = "none";
-            rightAlert.style.display = "block";
-            rightAlert.innerText = feedback;
-        } else {
-            feedback = `GAME OVER!! 
-                Human, we are laughing at your face
-                Press Start to play again`;
-            wrongAlert.style.display = "block";
-            rightAlert.style.display = "none";
-            wrongAlert.innerText = feedback;
-            }
-    }
-    
 
-//clear the inputbox 
-input.value = '';  
-//update history area by adding paragraph to div#history
-let p = document.createElement('P');
-p.innerText = `your guess ${count}: ${guessNum}. Remaining guesses ${remaining}`;
-history.appendChild(p);
-return feedback;
+    if (loopArray(guessArray, guessNum) === -1) {
+        guessArray.push(guessNum);
+        count++;
+        remaining--;
+
+
+        if (count < 10) {
+            if (isNaN(guessNum) || guessNum <= 0 || guessNum === '') {
+                feedback = `your guess should be a number from 1 to 100`;
+                wrongAlert.style.display = "block";
+                rightAlert.style.display = "none";
+                wrongAlert.innerText = feedback;
+            } else if (guessNum > randomNum) {
+                feedback = `OPP, TOO HIGH`;
+                rightAlert.style.display = "none";
+                wrongAlert.style.display = "block";
+                wrongAlert.innerText = feedback;
+
+            } else if (guessNum < randomNum) {
+                feedback = `OPP, TOO LOW`;
+                rightAlert.style.display = "none";
+                wrongAlert.style.display = "block";
+                wrongAlert.innerText = feedback;
+
+            } else if (guessNum == randomNum) {
+                feedback = `WOW, YOU TAKE TOO LONG TO MAKE IT LOL`;
+                wrongAlert.style.display = "none";
+                rightAlert.style.display = "block";
+                rightAlert.innerText = feedback;
+                submitBtn.disabled = true;
+            }
+
+        } else if (count == 10) {
+            //disable guess button to stop human from playing
+            submitBtn.disabled = true;
+
+            if (guessNum == randomNum) {
+                feedback = `WOW, YOU TAKE TOO LONG TO MAKE IT LOL`;
+                wrongAlert.style.display = "none";
+                rightAlert.style.display = "block";
+                rightAlert.innerText = feedback;
+            } else {
+                feedback = `GAME OVER!! 
+                    Human, we are laughing at your face
+                    Press Start to play again`;
+                wrongAlert.style.display = "block";
+                rightAlert.style.display = "none";
+                wrongAlert.innerText = feedback;
+            }
+        }
+
+
+        //clear the inputbox 
+        input.value = '';
+        //update history area by adding paragraph to div#history
+        let p = document.createElement('P');
+        p.innerText = `your guess ${count}: ${guessNum}. Remaining guesses ${remaining}`;
+        history.appendChild(p);
+    } else {
+        feedback = `you repeated previous get, do again`;
+        wrongAlert.style.display = "block";
+        wrongAlert.innerText = feedback;
+    }
+
+    return feedback;
 }
 
 
@@ -106,3 +118,7 @@ function checkArr(a) {
 
 }
 
+function loopArray(arr, a) {
+    return arr.findIndex((x) => x == a)
+
+}
