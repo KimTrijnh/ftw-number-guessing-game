@@ -31,7 +31,7 @@ The following **required** functionalities are completed (this is a sample):
 The following **optional** features are implemented:
 
 * [x] The user can see a history of past guesses.
-* [x] When the user guesses the same number twice, the user receives an error message alerting them to the fact that they've already guessed that number. The number of guesses remaining should not decrease. 
+* [ ] When the user guesses the same number twice, the user receives an error message alerting them to the fact that they've already guessed that number. The number of guesses remaining should not decrease. 
 * [ ] The user can play multiple rounds of the game, and see results about previous rounds on the screen.
 * [ ] The user can see their best score of the session. Best score is defined as the round that took the fewest guesses to arrive at the correct number. 
 * [ ] The user can see how long it took to finish each round in seconds.
